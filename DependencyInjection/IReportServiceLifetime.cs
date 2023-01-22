@@ -7,4 +7,5 @@ public interface IReportServiceLifetime
     Guid Id { get; }
 
     ServiceLifetime Lifetime { get; }
+    string Name { get; }
 }

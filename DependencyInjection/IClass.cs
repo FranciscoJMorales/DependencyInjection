@@ -2,7 +2,8 @@
 
 namespace DependencyInjection;
 
-public interface IExampleScopedService : IReportServiceLifetime
+public interface IClass : IReportServiceLifetime
 {
     ServiceLifetime IReportServiceLifetime.Lifetime => ServiceLifetime.Scoped;
+    void ClassInfo();
 }

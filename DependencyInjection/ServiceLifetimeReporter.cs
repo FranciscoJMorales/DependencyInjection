@@ -2,24 +2,16 @@
 
 internal sealed class ServiceLifetimeReporter
 {
-    private readonly IExampleTransientService _transientService;
-    private readonly IExampleScopedService _scopedService;
-    private readonly IExampleSingletonService _singletonService;
+    private readonly IWarrior _warrior;
 
-    public ServiceLifetimeReporter(
-        IExampleTransientService transientService,
-        IExampleScopedService scopedService,
-        IExampleSingletonService singletonService) =>
-        (_transientService, _scopedService, _singletonService) =
-            (transientService, scopedService, singletonService);
+    public ServiceLifetimeReporter(IWarrior warrior) => (_warrior) = (warrior);
 
     public void ReportServiceLifetimeDetails(string lifetimeDetails)
     {
         Console.WriteLine(lifetimeDetails);
 
-        LogService(_transientService, "Always different");
-        LogService(_scopedService, "Changes only with lifetime");
-        LogService(_singletonService, "Always the same");
+        LogService(_warrior, $"Descripción de personaje: { _warrior.Name }");
+        _warrior.DescribeWarrior();
     }
 
     private static void LogService<T>(T service, string message)

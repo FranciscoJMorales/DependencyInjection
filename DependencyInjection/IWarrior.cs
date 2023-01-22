@@ -2,7 +2,8 @@
 
 namespace DependencyInjection;
 
-public interface IExampleSingletonService : IReportServiceLifetime
+public interface IWarrior : IReportServiceLifetime
 {
     ServiceLifetime IReportServiceLifetime.Lifetime => ServiceLifetime.Singleton;
+    void DescribeWarrior();
 }

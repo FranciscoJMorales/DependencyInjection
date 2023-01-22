@@ -5,9 +5,9 @@ using DependencyInjection;
 using IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
-        services.AddTransient<IExampleTransientService, ExampleTransientService>();
-        services.AddScoped<IExampleScopedService, ExampleScopedService>();
-        services.AddSingleton<IExampleSingletonService, ExampleSingletonService>();
+        services.AddTransient<IWeapon, Falchion>();
+        services.AddScoped<IClass, Lord>();
+        services.AddSingleton<IWarrior, Chrom>();
         services.AddTransient<ServiceLifetimeReporter>();
     })
     .Build();
